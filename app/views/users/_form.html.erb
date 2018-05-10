@@ -1,0 +1,19 @@
+<% if type == :new %>
+  <% action_url = users_url %>
+    <h2 class="page-header">Sign Up: New User</h2>
+<% else %>
+  <% action_url = session_url %>
+    <h2 class="page-header">Sign In</h2>
+<% end %>
+<form action="<%=action_url%>" method="post">
+  <%=auth_token%>
+  <p>
+    <label for="user-email">Email</label>
+    <input id ="user-email" type="text" name="user[email]">
+  </p>
+  <p>
+    <label for="user-password">Password</label>
+    <input id ="user-password" type="password" name="user[password]">
+  </p>
+  <input type="submit"
+</form>
