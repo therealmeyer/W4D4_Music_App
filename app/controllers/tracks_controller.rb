@@ -1,5 +1,6 @@
 class TracksController < ApplicationController
 
+  before_action :require_logged_in
   def new
     @track = Track.new
     render :new
