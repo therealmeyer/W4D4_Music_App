@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       login_user!(@user)
       redirect_to bands_url
     else
-      flash[:errors] = @user.errors.full_messages
+      flash.now[:errors] = @user.errors.full_messages
       redirect_to new_user_url
     end
   end
