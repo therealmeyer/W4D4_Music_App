@@ -9,13 +9,13 @@
   </head>
 
   <body>
-    <ul>
-      <% if flash[:errors]%>
-        <% flash[:errors].each do |error|%>
-          <li>  <%=error%> </li>
-        <% end %>
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
       <% end %>
-    </ul>
+
+      <% if flash[:errors] %>
+        <p><%= flash[:errors].join(", ") %></p>
+      <% end %>
     <div class="main-content">
       <h1 class="main-logo">Music App</h1>
       <% if logged_in? %>
